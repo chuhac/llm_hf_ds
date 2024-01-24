@@ -1,8 +1,8 @@
 {
-    "bf16": {
+  "bf16": {
     "enabled": "auto"
-    },
-    "optimizer": {
+  },
+  "optimizer": {
     "type": "AdamW",
     "params": {
       "lr": "auto",
@@ -10,29 +10,25 @@
       "eps": "auto",
       "weight_decay": "auto"
     }
-    },
-    "scheduler": {
+  },
+  "scheduler": {
     "type": "WarmupLR",
     "params": {
       "warmup_min_lr": "auto",
       "warmup_max_lr": "auto",
       "warmup_num_steps": "auto"
     }
-    },
-    "zero_optimization": {
+  },
+  "zero_optimization": {
     "stage": 2,
     "overlap_comm": true,
     "contiguous_gradients": true,
     "reduce_bucket_size": "auto",
-    "stage3_prefetch_bucket_size": 3e7,
-    "stage3_param_persistence_threshold": 1e4,
-    "stage3_max_live_parameters": 3e7,
-    "stage3_gather_16bit_weights_on_model_save": false
-    },
-    "gradient_accumulation_steps": "auto",
-    "gradient_clipping": "auto",
-    "steps_per_print": 2000,
-    "train_batch_size": "auto",
-    "train_micro_batch_size_per_gpu": "auto",
-    "wall_clock_breakdown": false
+  },
+  "gradient_accumulation_steps": "auto",
+  "gradient_clipping": "auto",
+  "steps_per_print": 2000,
+  "train_batch_size": "auto",
+  "train_micro_batch_size_per_gpu": "auto",
+  "wall_clock_breakdown": false
 }
