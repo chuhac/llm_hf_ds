@@ -1,0 +1,4 @@
+deepspeed --hostfile ./host.cfg train_with_trainer.py --model_name_or_path path_to/baichuan_13b_chat --train_data ./data/arrows/156w_data_baichuan --per_device_train_batch_size 1 --gradient_accumulation_steps 16  --output_dir ./experiments/156_baichuan --job_name 156_baichuan --seed 42 --bf16 --zero_stage 2 --learning_rate 5e-6
+
+
+deepspeed --include localhost:0,1,2,3,4,5,6,7 train_with_trainer_bai.py --model_name_or_path /mnt/dolphinfs/hdd_pool/docker/user/hadoop-fsprisk/baomengjiao/LLM/baichuan/baichuan_13b_chat --train_data ./data/arrows/156w_data_baichuan --per_device_train_batch_size 1 --gradient_accumulation_steps 16  --output_dir ./experiments/156_baichuan --seed 42 --bf16 --learning_rate 5e-6
